@@ -1,38 +1,132 @@
-.App {
+html, body{
+  box-sizing: border-box;
+}
+.livestream-wrapper{
+  width: 80%;
+  padding: 20px;
+  height: 500px;
+  margin: auto;
+}
+#livestream{
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+
+.selfie-popup{
+ width: 768px !important;
+ min-width: 768px !important;
+ max-width: 768px !important;
+ position: relative;
+ background-color: rgba(0,0,0,0.3) !important;
+}
+
+.selfie-loader{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#selfie{
+  width: 768px !important;
+  height: auto;
+}
+
+.selfie-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+.selfie-btn{
+  color: white !important;
+  }
+.white-outline{
+  border: 1px solid white !important;  
+}  
+
+#inner-circle{
+  cursor: pointer;
+}
+
+.guestbook-input{
+  margin-top: 12px;
+}
+.guestbook-input.message{
+  margin-top: 24px;
+}
+
+.image-drop-zone-container{
+  margin-top: 10px;
+  background-color: #e5e2e2;
   text-align: center;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  position: relative;
+}
+.loading {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+}
+.disabled{
+  background-color: rgba(229, 226, 226, .6);
+  color: rgba(0, 0, 0, .6);
+  cursor: not-allowed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hide{
+  visibility: hidden;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.image-buttons{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-end;
+}
+.image-button{
+  margin-right: 10px;
+}
+.guest-message-media{
+  height: 0;
+  padding-top: 56.25%;
+}
+.submit-button{
+  margin-left: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.guest-book-wrapper{
+  width: 50%;
+  max-width: 400px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.selfie-alert{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 0;
+  opacity: 0.8;
+}
+
+.polaroid-container{
+  position: relative;
+}
+
+.polaroid-back{
+  width: 100%;
+}
+
+.polaroid-text{
+  position: absolute;
+  top: 6%;
+  left: 4%;
+  padding: 3%;
+  width: 86%;
+  height: 68%;
+  font-size: 8em;
+  color: silver !important;
+  word-break: break-word;
 }
