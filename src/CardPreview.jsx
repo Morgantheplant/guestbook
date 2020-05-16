@@ -1,30 +1,24 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import classNames from "classnames";
-import Tooltip from "@material-ui/core/Tooltip";
 
-const getPolaroidUrl = (imageData) =>
-  imageData && imageData.path
-    ? imageData.path
+const getPolaroidUrl = (photo) =>
+  photo && photo.path
+    ? photo.path
     : `./placeholders/${Math.round(Math.random() * 21)}.png`;
 
 export const CardPreview = (props) => {
-  const polaroidImageSrc = getPolaroidUrl(props.imageData) || "";
-  const hasPicture = !!(props.imageData && props.imageData.path);
+  const polaroidImageSrc = getPolaroidUrl(props.photo) || "";
+  const hasPicture = !!(props.photo && props.photo.path);
   return (
-    <Tooltip
-    title={
-      hasPicture
-        ? ""
-        : "This pitcure will be random if don't add your own!"
-    }
-  >
     <div
       className="polaroid-container"
       style={{ display: "flex", flexDirection: "column" }}
     >
       <div className="polaroid-container-inner">
-        <div className="polaroid-back-container">
+        <div className={classNames("polaroid-back-container", {
+          reversed: !props.backForward
+        })}>
           <img
             src="./polaroidback.png"
             alt="back of polaroid"
@@ -34,7 +28,6 @@ export const CardPreview = (props) => {
             <Typography
               style={{
                 fontFamily: "'Permanent Marker', cursive",
-                "margin-bottom": "20px",
               }}
             >
               {props.message ? props.message : "( your message will go here )"}
@@ -44,7 +37,9 @@ export const CardPreview = (props) => {
             </Typography>
           </div>
         </div>
-        <div className="polaroid-front-container">
+        <div className={classNames("polaroid-front-container", {
+          reversed: props.backForward
+        })}>
           <img src="./polaroid1.png" className="polaroid-front-image" alt="" />
 
           <img
@@ -69,6 +64,5 @@ export const CardPreview = (props) => {
       </div>
       <section></section>
     </div>
-    </Tooltip>
   );
 };

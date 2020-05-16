@@ -3,6 +3,7 @@ import Dialog from "@material-ui/core/Dialog";
 import Camera from "react-html5-camera-photo";
 import Alert from "@material-ui/lab/Alert";
 import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import "react-html5-camera-photo/build/css/index.css";
@@ -11,7 +12,7 @@ import { uploadPicture } from "./upload";
 import BackupIcon from '@material-ui/icons/Backup';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 
-export const TakePictureModal = (props) => {
+export const SelfieModal = (props) => {
   const [imageUrl, setImageUrl] = React.useState();
   const [isUploading, setIsUploading] = React.useState();
   const [error, setError] = React.useState("");
