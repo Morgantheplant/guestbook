@@ -18,7 +18,7 @@ import classNames from "classnames";
 import { SelfieModal } from "./SelfieModal";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
-import { CardPreview } from "./CardPreview";
+import { Polaroid } from "./Polaroid";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { API_BASE_URL } from "./constants";
@@ -76,7 +76,7 @@ const getInitialValues = () =>
 
 const removeImageIfExists = (imageData) => {
   if (imageData && imageData.cid) {
-    axios.delete(`http://localhost:3000/image/${imageData.cid}`);
+    axios.delete(`${API_BASE_URL}/image/${imageData.cid}`);
   }
 };
 
@@ -205,9 +205,10 @@ export const GuestBookForm = (props) => {
                 display: "flex",
                 flexDirection: "column",
                 margin: "20px",
+                backgroundColor: "rgb(237, 241, 235)"
               }}
             >
-              <CardHeader title="Sign our public guestbook" />
+              <CardHeader className="sign-our-guestbook-card"  title="Sign our public guestbook" />
               <Collapse in={!!imageData} timeout="auto" unmountOnExit>
                 <div className="image-wrapper">
                   <CardMedia
@@ -318,7 +319,7 @@ export const GuestBookForm = (props) => {
               }
             >
               <div className="preview-photo-wrapper">
-                <CardPreview {...values} photo={imageData} backForward={true} />
+                <Polaroid {...values} photo={imageData} backForward={true} />
               </div>
             </Tooltip>
           </div>

@@ -1,5 +1,5 @@
 export const API_BASE_URL = "https://jacamo-api.herokuapp.com";
-
+export const IMAGE_BASE_URL = '/assets/images/guestbook'
 
 export const LOVE_MESSAGE =`
 ░░░░░██╗░█████╗░░█████╗░██╗░░░░░██╗░░░██╗███╗░░██╗  ░░░░░░░  

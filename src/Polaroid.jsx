@@ -1,26 +1,32 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import classNames from "classnames";
+import {IMAGE_BASE_URL} from './constants';
 
 const getPolaroidUrl = (photo) =>
   photo && photo.path
     ? photo.path
-    : `./placeholders/${Math.round(Math.random() * 21)}.png`;
+    : `${IMAGE_BASE_URL}/placeholders/${Math.ceil(Math.random() * 21)}.png`;
 
-export const CardPreview = (props) => {
+export const Polaroid = (props) => {
   const polaroidImageSrc = getPolaroidUrl(props.photo) || "";
   const hasPicture = !!(props.photo && props.photo.path);
+  const [position, setPosition] = React.useState(props.backForward);
+  const handleClick = ()=> {
+    setPosition(prevState => !prevState);
+  }
   return (
     <div
       className="polaroid-container"
       style={{ display: "flex", flexDirection: "column" }}
+      onClick={handleClick}
     >
       <div className="polaroid-container-inner">
         <div className={classNames("polaroid-back-container", {
-          reversed: !props.backForward
+          reversed: !position
         })}>
           <img
-            src="./polaroidback.png"
+            src={`${IMAGE_BASE_URL}/polaroidback.png`}
             alt="back of polaroid"
             className="polaroid-back-image"
           />
@@ -38,9 +44,9 @@ export const CardPreview = (props) => {
           </div>
         </div>
         <div className={classNames("polaroid-front-container", {
-          reversed: props.backForward
+          reversed: position
         })}>
-          <img src="./polaroid1.png" className="polaroid-front-image" alt="" />
+          <img src={`${IMAGE_BASE_URL}/polaroid1.png`} className="polaroid-front-image" alt="" />
 
           <img
             src={polaroidImageSrc}

@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import axios from "axios";
 import { GuestBookForm } from "./GuestBookForm";
-import { CardPreview } from "./CardPreview";
+import { Polaroid } from "./Polaroid";
 import Grid from "@material-ui/core/Grid";
 import { API_BASE_URL, LOVE_MESSAGE } from "./constants";
 import Typography from "@material-ui/core/Typography";
@@ -37,11 +37,11 @@ const App = () => {
           style={{ marginTop: "30px", marginBottom: "30px" }}
         >
           <Grid item xs={8}>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h4" gutterBottom style={{fontFamily: "'Restless Youth Small Caps', cursive", fontSize: '32px'}}>
               Welcome to our wedding!{" "}
             </Typography>
 
-            <Typography variant="body1" gutterBottom>
+            <Typography variant="body1" gutterBottom style={{marginTop: '30px', paddingLeft: '10px'}}>
               Thank you for joining us on our special day! While this isn't
               quite what we had in mind, we are overjoyed to have found a way to
               be married on the day we intended with the (virtual) presence of
@@ -61,7 +61,7 @@ const App = () => {
 
         <Container maxWidth="l">
           <div className="guestbook-heading-container">
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h1" className="title" gutterBottom>
               Guestbook:
             </Typography>
           </div>
@@ -70,7 +70,7 @@ const App = () => {
               return (
                 <Grid item spacing={6}>
                   <div style={{ maxWidth: "300px" }}>
-                    <CardPreview {...msg} />
+                    <Polaroid {...msg} />
                   </div>
                 </Grid>
               );

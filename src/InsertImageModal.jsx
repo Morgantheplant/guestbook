@@ -46,6 +46,7 @@ export const InsertImageModal = (props) => {
       maxWidth="md"
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
+      
     >
       <DialogTitle id="alert-dialog-title">Upload Image</DialogTitle>
       <DialogContent>

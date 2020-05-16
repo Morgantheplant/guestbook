@@ -3,7 +3,6 @@ import Dialog from "@material-ui/core/Dialog";
 import Camera from "react-html5-camera-photo";
 import Alert from "@material-ui/lab/Alert";
 import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import "react-html5-camera-photo/build/css/index.css";
