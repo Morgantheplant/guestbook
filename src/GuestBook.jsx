@@ -21,6 +21,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
 import {CardPreview} from './CardPreview';
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid"
 
 const fields = [
   {
@@ -188,7 +189,7 @@ export const GuestBook = (props) => {
             <CardMedia
               className="guest-message-media"
               image={imageData ? imageData.path : ""}
-              title="Your photo"
+              title="Your photo (see preview below)"
             />
           </div>
         </Collapse>
@@ -263,6 +264,7 @@ export const GuestBook = (props) => {
           </form>
         </CardContent>
         <CardActions className="submit-button">
+        <Tooltip title="This is public! See preview below before posting.">
           <Button
             disabled={submitState === SUBMIT_STATES.submitting}
             onClick={
@@ -273,6 +275,7 @@ export const GuestBook = (props) => {
           >
             Submit
           </Button>
+          </Tooltip>
         </CardActions>
       </Card>
       <Snackbar
